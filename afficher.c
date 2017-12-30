@@ -8,6 +8,15 @@
 
 void initialiser_affichage(SLIDER S) {
 	init_graphics (50*S.L,50*S.H);
+	//rajouter le tab mur init a 1
+	int i,j;
+	for (i=0;i<20;i++){
+		for(j=0;j<20;j++){
+			S.T[i][j]=1;
+			printf("%d \n ",S.T[i][j]);// RAPHA ici le T es a 1
+		}
+	}
+	printf("init fait");
 }
 
 void afficher_grille(SLIDER S) {
@@ -18,9 +27,9 @@ void afficher_grille(SLIDER S) {
 	for(i=0;i<S.H;i++)
 	{
 		b.x=S.L*CASE;
-		draw_line(a,b,rouge);	
+		draw_line(a,b,rouge);
 		b.y+=CASE;
-		a.y+=CASE;	
+		a.y+=CASE;
 		//	printf("pute\n");
 	}
 	//printf("puteeee\n");
@@ -29,19 +38,42 @@ void afficher_grille(SLIDER S) {
 	for(j=0;j< S.L;j++)
 		{
 			//printf("salope\n");
-			draw_line(a,b,rouge);	
+			draw_line(a,b,rouge);
 			a.x+=CASE;
 			b.x+=CASE;
 		}
 }
 
 void afficher_murs(SLIDER S) {
-	
+	int i,j;
+	POINT a,b;
+	for(i=0;i<20;i++){//ATTENTION TABLEAU NON VARIABLE
+		for(j=0;j<20;j++){
+			if (S.T[i][j]!=1){
+				if(S.T[i][j]==0){// RAPHA ici le T es aleatoire(pas init)
+					
+					a.x=i*CASE;a.y=j*CASE+CASE+2;
+					b.x=i*CASE+CASE;b.y=j*CASE+CASE-2;
+					draw_fill_rectangle(a,b, blanc);
+				}
+				if(S.T[i][j]==3){
+					
+				}
+				if(S.T[i][j]==6){
+					
+				}
+				if(S.T[i][j]==9){
+					
+				}
+			}
+			
+		}
+	}
 }
 
 void afficher_le_slider(SLIDER S) {
 	POINT a;
-	int x,y;
+	
 	a.x=S.X*CASE+(CASE>>1);
 	a.y=S.Y*CASE+(CASE>>1);
 

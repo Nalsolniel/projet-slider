@@ -11,10 +11,17 @@ int main (int argc, char*argv[]) {
 	SLIDER S;
 	S = lire_fichier(argv[1]);
 	
-	initialiser_affichage(S);
+	initialiser_affichage(S);//le T es bien init
+	printf("fffffffffffffffffffffffffffff\n");
+	afficher_slider(S);//yolo le t n est pas init
 	
-	afficher_slider(S);
-
+	int i,j;
+for (i=0;i<20;i++){
+		for(j=0;j<20;j++){
+			
+			printf("%d \n ",S.T[i][j]);
+		}
+	}
 
 	printf("Fin slider\n");
 	
