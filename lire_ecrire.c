@@ -9,10 +9,9 @@ SLIDER lire_fichier(char *nom) {
 		printf ("ereur ouverture fichier");
 		//exit(0;
 	}
-	int a,b;
 	printf("nom = %s\n",nom);
 	SLIDER S;
-	fscanf(f, "%d %d", &a,&b);
+	fscanf(f, "%d %d", &S.L,&S.H);
 	printf("lec_01");
 	fscanf(f, " %d %d", S.X,S.Y);
 	fscanf(f, " %d %d", &S.SOX,&S.SOY);
