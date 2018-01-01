@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 #include "mes_types.h"
+
+#include "initialisation.h"
 #include "lire_ecrire.h"
 #include "afficher.h"
 
@@ -11,7 +13,7 @@ int main (int argc, char*argv[]) {
 	SLIDER S;
 	init_Tmur(S);
 	S = lire_fichier(argv[1]);
-	
+	printf("blop");
 	initialiser_affichage(S);//le T es bien init
 	printf("fffffffffffffffffffffffffffff\n");
 	afficher_slider(S);//yolo le t n est pas init

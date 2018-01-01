@@ -4,8 +4,8 @@ test: slider
 	./slider niveau_01.slider
 
 # Edition de liens
-slider: slider.o lire_ecrire.o afficher.o
-	gcc slider.o lire_ecrire.o afficher.o -o slider -luvsqgraphics `sdl-config --libs` -lm -lSDL_ttf
+slider: slider.o lire_ecrire.o afficher.o initialisation.o
+	gcc slider.o lire_ecrire.o afficher.o initialisation.o -o slider -luvsqgraphics `sdl-config --libs` -lm -lSDL_ttf
 
 # Compilation
 slider.o: slider.c mes_types.h lire_ecrire.h  afficher.h initialisation.h

@@ -66,8 +66,8 @@ void afficher_murs(SLIDER S) {
 void afficher_le_slider(SLIDER S) {
 	POINT a;
 	
-	a.x=S.X*CASE+(CASE>>1);
-	a.y=S.Y*CASE+(CASE>>1);
+	a.x=S.X[0]*CASE+(CASE>>1);
+	a.y=S.Y[0]*CASE+(CASE>>1);
 
 	draw_fill_circle(a,24,blanc);
 	draw_fill_circle(a,22,violet);
