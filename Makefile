@@ -8,20 +8,24 @@ slider: slider.o lire_ecrire.o afficher.o
 	gcc slider.o lire_ecrire.o afficher.o -o slider -luvsqgraphics `sdl-config --libs` -lm -lSDL_ttf
 
 # Compilation
-slider.o: slider.c mes_types.h lire_ecrire.h afficher.c afficher.h
+slider.o: slider.c mes_types.h lire_ecrire.h  afficher.h initialisation.h
 	gcc -c -Wall slider.c
 
 # Compilation
-lire_ecrire.o: lire_ecrire.c
+lire_ecrire.o: lire_ecrire.c mes_types.h
 	gcc -c -Wall lire_ecrire.c
 
 # Compilation
-afficher.o: afficher.c
+afficher.o: afficher.c mes_types.h
 #	gcc -c -Wall   -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT  afficher.c
 	gcc -c -Wall  `sdl-config --cflags`   afficher.c
+	
+# Compilation
+initialisation.o: initialisation.c mes_types.h
+	gcc -c -Wall initialisation.c
 
 go:
-	geany Makefile mes_types.h slider.c afficher.c afficher.h lire_ecrire.c lire_ecrire.h niveau01.slider &
+	geany Makefile mes_types.h slider.c afficher.c afficher.h lire_ecrire.c lire_ecrire.h niveau01.slider initialisation.c initialisation.h&
 
 # Pour creer le zip a deposer sur e-campus
 zip:

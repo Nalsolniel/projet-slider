@@ -9,6 +9,7 @@ int main (int argc, char*argv[]) {
 	printf("Debut slider\n");
 
 	SLIDER S;
+	init_Tmur(S);
 	S = lire_fichier(argv[1]);
 	
 	initialiser_affichage(S);//le T es bien init

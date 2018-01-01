@@ -9,14 +9,6 @@
 void initialiser_affichage(SLIDER S) {
 	init_graphics (50*S.L,50*S.H);
 	//rajouter le tab mur init a 1
-	int i,j;
-	for (i=0;i<20;i++){
-		for(j=0;j<20;j++){
-			S.T[i][j]=1;
-			printf("%d \n ",S.T[i][j]);// RAPHA ici le T es a 1
-		}
-	}
-	printf("init fait");
 }
 
 void afficher_grille(SLIDER S) {
